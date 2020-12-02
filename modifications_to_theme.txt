@@ -1,6 +1,7 @@
 MODIFICATIONS
 
 CSS Modifications:
+MOBILE FIRST
 > Changed color of nav bar
 files: settings_schema.json, css-variables.liquid, theme.css
 query involved: .site-header
@@ -42,3 +43,16 @@ solution: added a new setting in settings_schema.json
       }
 then changed line 40 in css-variables.liquid {{ settings.color_bg }} originally color_body_bg
 however, color was only applied to the relatively positioned element.
+
+> Changed color of nav icons to white
+files: settings_schema.json, css-variables.liquid, theme.css
+changes: in theme.css line 1515 - changed color:var(--color-text) to color:var(--color-btn-primary-text)
+result: SUCCESS but the cart icon remained #3a3a3a (grey)
+
+> Changed color of cart icon on nav bar to white
+files
+file: theme.liquid
+line 62
+changes: changed a{color:var(--color-text) to a{color:var(--color-btn-primary-text)
+CAUTION: change might affect other "a"
+
