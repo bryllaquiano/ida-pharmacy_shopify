@@ -4718,7 +4718,7 @@ hr {
 .mobile-nav__label {
   border-bottom: 1px solid transparent; }
   .mobile-nav__link--active .mobile-nav__label {
-    border-bottom-color: var(--color-text); }
+    border-bottom-color: var(--color-body); }
 
 .mobile-nav__sublist-link:not(.mobile-nav__sublist-header) {
   padding-left: 70px;
@@ -4799,7 +4799,7 @@ hr {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--color-body);
+  background-color: var(--color-bg);
   transition: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
   display: none;
   overflow: hidden;

@@ -7,7 +7,7 @@ files: settings_schema.json, css-variables.liquid, theme.css
 query involved: .site-header
 id: color_body_bg
 line: 581
-comments: changed color of nav bar from #ffffff to #1465a8
+comments: changed color of nav bar from #ffffff to #0B3D65
 problems: the color changed affected the whole dcoument
 probable solutions:
 	> maybe set a separate setting for navbar color?
@@ -39,7 +39,7 @@ solution: added a new setting in settings_schema.json
           "zh-CN": "背景",
           "zh-TW": "背景"
         },
-        "default": "#1465a8"
+        "default": "#0B3D65"
       }
 then changed line 40 in css-variables.liquid {{ settings.color_bg }} originally color_body_bg
 however, color was only applied to the relatively positioned element.
@@ -55,4 +55,41 @@ file: theme.liquid
 line 62
 changes: changed a{color:var(--color-text) to a{color:var(--color-btn-primary-text)
 CAUTION: change might affect other "a"
+result: SUCCESS but with caution
 
+> Changed background color of hamburger nav to #0B3D65
+files: theme.css
+result: SUCCESS
+
+> Changed focus color to lighter grey by adding new setting
+files: settings_schema.json, css-variables.liquid 
+changes:
+{
+        "type": "color",
+        "id": "color_text_focus",
+        "label": {
+          "cs": "Nadpisy a odkazy",
+          "da": "Overskrifter og links",
+          "de": "Titel und Links",
+          "en": "Headings and links",
+          "es": "Títulos y enlaces",
+          "fi": "Otsikot ja linkit",
+          "fr": "En-têtes et liens",
+          "it": "Titoli e link",
+          "ja": "見出しとリンク",
+          "ko": "제목 및 링크",
+          "nb": "Overskrifter og koblinger",
+          "nl": "Koppen en links",
+          "pl": "Nagłówki i linki",
+          "pt-BR": "Títulos e links",
+          "pt-PT": "Títulos e ligações",
+          "sv": "Rubriker och länkar",
+          "th": "หัวเรื่องและลิงก์",
+          "tr": "Başlıklar ve bağlantılar",
+          "vi": "Tiêu đề và liên kết",
+          "zh-CN": "标题和链接",
+          "zh-TW": "標題和連結"
+        },
+        "default": "#AAD2F3"
+and
+    --color-text-focus: {{ settings.color_text_focus }};

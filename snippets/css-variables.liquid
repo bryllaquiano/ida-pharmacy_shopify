@@ -29,7 +29,7 @@
     --color-blankstate-border: {{ settings.color_body_text | color_modify: 'alpha', 0.2 }};
     --color-blankstate-background: {{ settings.color_body_text | color_modify: 'alpha', 0.1 }};
 
-    --color-text-focus: {%- include 'adaptive-color' with settings.color_text as color -%};
+    --color-text-focus: {{ settings.color_text_focus }};
     --color-overlay-text-focus: {%- include 'adaptive-color' with settings.color_image_overlay_text as color -%};
     --color-btn-primary-focus: {%- include 'adaptive-color' with settings.color_button as color -%}; 
     --color-btn-social-focus: {%- include 'adaptive-color' with settings.color_borders as color -%};
