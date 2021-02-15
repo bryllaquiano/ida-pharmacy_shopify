@@ -54,7 +54,7 @@
     {% endif %}
   {% endif %}
 
-  <header class="site-header{% if section.settings.align_logo == 'left' %} border-bottom logo--left{% else %} logo--center{% endif %}" role="banner">
+  <header class="site-header{% if section.settings.align_logo == 'left' %} border-bottom logo--left{% endif %}" role="banner">
     <div class="grid grid--no-gutters grid--table site-header__mobile-nav">
       {% if section.settings.align_logo == 'center' %}
         {%- assign logo_classes = 'medium-up--one-third medium-up--push-one-third logo-align--center' -%}
@@ -373,32 +373,6 @@
             "vi": "Bên trái",
             "zh-CN": "左侧",
             "zh-TW": "左方"
-          }
-        },
-        {
-          "value": "center",
-          "label": {
-            "cs": "Na střed",
-            "da": "Centreret",
-            "de": "Mittig",
-            "en": "Centered",
-            "es": "Centrada",
-            "fi": "Keskitetty",
-            "fr": "Centré",
-            "it": "Centrato",
-            "ja": "中央揃え",
-            "ko": "센터 맞추기",
-            "nb": "Sentrert",
-            "nl": "Gecentreerd",
-            "pl": "Wyśrodkowane",
-            "pt-BR": "Centralizado",
-            "pt-PT": "Centrado",
-            "sv": "Centrera",
-            "th": "ตรงกลาง",
-            "tr": "Orta",
-            "vi": "Giữa",
-            "zh-CN": "居中",
-            "zh-TW": "置中"
           }
         }
       ]
