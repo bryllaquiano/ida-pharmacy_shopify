@@ -3726,7 +3726,13 @@ hr {
       margin: 0 auto; } }
 
 .site-header__logo-image img {
-  width: 100%; }
+  width: 60%;
+  height: auto; }
+  @media only screen and (min-width: 750px) {
+    .site-header__logo-image img {
+      width: 100%
+    }
+  }
 
 .site-header__logo-image--centered img {
   margin: 0 auto; }
