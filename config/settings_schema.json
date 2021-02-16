@@ -222,7 +222,7 @@
           "zh-CN": "主要标签",
           "zh-TW": "主要標籤"
         },
-        "default": "#ffffff"
+        "default": "#f8f8f8"
       },
       {
         "type": "color",
@@ -606,7 +606,7 @@
           "zh-CN": "背景",
           "zh-TW": "背景"
         },
-        "default": "#1465a8"
+        "default": "#0B3D65"
       }
     ]
   },
