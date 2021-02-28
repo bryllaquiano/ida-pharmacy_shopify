@@ -687,7 +687,7 @@
           "zh-CN": "字体",
           "zh-TW": "字型"
         },
-        "default": "helvetica_n7"
+        "default": "neue_haas_unica_n7"
       },
       {
         "type": "range",
@@ -773,7 +773,7 @@
           "zh-CN": "字体",
           "zh-TW": "字型"
         },
-        "default": "helvetica_n4"
+        "default": "open_sans_n4"
       },
       {
         "type": "range",
