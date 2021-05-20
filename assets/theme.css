@@ -2033,9 +2033,17 @@ textarea {
 .site-nav__link--button:focus, .site-nav__link--button:hover {
   color: white; }
 
+/* "Shop Now" */
+#main-menu-1 {
+  padding: 5px;
+  background-color: #e42526;
+  border-radius: 10px;
+}
+
 /*================ Dropdowns ================*/
 .site-nav--has-dropdown {
-  position: relative; }
+  position: relative; 
+}
 
 .site-nav--has-centered-dropdown {
   position: static; }
@@ -3748,7 +3756,8 @@ hr {
 
 .site-header__icons {
   position: relative;
-  white-space: nowrap; }
+  white-space: nowrap; 
+}
   @media only screen and (max-width: 749px) {
     .site-header__icons {
       width: auto;
