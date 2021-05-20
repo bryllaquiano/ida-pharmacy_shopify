@@ -7,7 +7,7 @@ files: settings_schema.json, css-variables.liquid, theme.css
 query involved: .site-header
 id: color_body_bg
 line: 581
-comments: changed color of nav bar from #ffffff to #1465a8
+comments: changed color of nav bar from #ffffff to #0B3D65
 problems: the color changed affected the whole dcoument
 probable solutions:
 	> maybe set a separate setting for navbar color?
@@ -39,7 +39,7 @@ solution: added a new setting in settings_schema.json
           "zh-CN": "背景",
           "zh-TW": "背景"
         },
-        "default": "#1465a8"
+        "default": "#0B3D65"
       }
 then changed line 40 in css-variables.liquid {{ settings.color_bg }} originally color_body_bg
 however, color was only applied to the relatively positioned element.
@@ -55,4 +55,155 @@ file: theme.liquid
 line 62
 changes: changed a{color:var(--color-text) to a{color:var(--color-btn-primary-text)
 CAUTION: change might affect other "a"
+result: SUCCESS but with caution
 
+> Changed background color of hamburger nav to #0B3D65
+files: theme.css
+result: SUCCESS
+
+> Changed focus color to lighter grey by adding new setting
+files: settings_schema.json, css-variables.liquid 
+changes:
+{
+        "type": "color",
+        "id": "color_text_focus",
+        "label": {
+          "cs": "Nadpisy a odkazy",
+          "da": "Overskrifter og links",
+          "de": "Titel und Links",
+          "en": "Headings and links",
+          "es": "Títulos y enlaces",
+          "fi": "Otsikot ja linkit",
+          "fr": "En-têtes et liens",
+          "it": "Titoli e link",
+          "ja": "見出しとリンク",
+          "ko": "제목 및 링크",
+          "nb": "Overskrifter og koblinger",
+          "nl": "Koppen en links",
+          "pl": "Nagłówki i linki",
+          "pt-BR": "Títulos e links",
+          "pt-PT": "Títulos e ligações",
+          "sv": "Rubriker och länkar",
+          "th": "หัวเรื่องและลิงก์",
+          "tr": "Başlıklar ve bağlantılar",
+          "vi": "Tiêu đề và liên kết",
+          "zh-CN": "标题和链接",
+          "zh-TW": "標題和連結"
+        },
+        "default": "#AAD2F3"
+and
+    --color-text-focus: {{ settings.color_text_focus }};
+
+> Change colors for text and background of footer
+files: footer.liquid
+changes: line 431 removed code block below to remove the settings from the theme editor
+{
+      "type": "header",
+      "content": {
+        "cs": "Barva",
+        "da": "Farve",
+        "de": "Farbe",
+        "en": "Color",
+        "es": "Color",
+        "fi": "Väri",
+        "fr": "Couleur",
+        "it": "Colore",
+        "ja": "色",
+        "ko": "색상",
+        "nb": "Farge",
+        "nl": "Kleur",
+        "pl": "Kolor",
+        "pt-BR": "Cor",
+        "pt-PT": "Cor",
+        "sv": "Färg",
+        "th": "สี",
+        "tr": "Renk",
+        "vi": "Màu",
+        "zh-CN": "颜色",
+        "zh-TW": "顏色"
+      }
+    },
+    {
+      "type": "color",
+      "id": "color_footer_bg",
+      "label": {
+        "cs": "Pozadí",
+        "da": "Baggrund",
+        "de": "Hintergrund",
+        "en": "Background",
+        "es": "Fondo",
+        "fi": "Tausta",
+        "fr": "Couleur de fond",
+        "it": "Sfondo",
+        "ja": "背景",
+        "ko": "배경",
+        "nb": "Bakgrunn",
+        "nl": "Achtergrond",
+        "pl": "Tło",
+        "pt-BR": "Plano de fundo",
+        "pt-PT": "Fundo",
+        "sv": "Bakgrund",
+        "th": "พื้นหลัง",
+        "tr": "Arka plan",
+        "vi": "Nền",
+        "zh-CN": "背景",
+        "zh-TW": "背景"
+      },
+      "default": "#f6f6f6"
+    },
+    {
+      "type": "color",
+      "id": "color_footer_text",
+      "label": {
+        "cs": "Text",
+        "da": "Tekst",
+        "de": "Text",
+        "en": "Text",
+        "es": "Texto",
+        "fi": "Teksti",
+        "fr": "Texte",
+        "it": "Testo",
+        "ja": "テキスト",
+        "ko": "텍스트",
+        "nb": "Tekst",
+        "nl": "Tekst",
+        "pl": "Tekst",
+        "pt-BR": "Texto",
+        "pt-PT": "Texto",
+        "sv": "Text",
+        "th": "ข้อความ",
+        "tr": "Metin",
+        "vi": "Văn bản",
+        "zh-CN": "文本",
+        "zh-TW": "文字"
+      },
+      "default": "#333232"
+    },
+Removed so client won't change it.
+Changed colors to:
+.site-footer p,
+  .site-footer__linklist-item a,
+  .site-footer__rte a,
+  .site-footer h4,
+  .site-footer small,
+  .site-footer__copyright-content a,
+  .site-footer__newsletter-error,
+  .site-footer__social-icons .social-icons__link {
+    color: #ffffff;
+  }
+
+  .site-footer {
+    color: #ffffff;
+    background-color: #0B3D65 ;
+  }
+
+  .site-footer__rte a {
+    border-bottom: 1px solid #ffffff;
+  }
+previously indicated as {{ section.settings.color_footer_bg }}, etc
+
+> Added padding to li on footer
+file: theme.css
+line 5672
+changed to:  padding: 15px 15px;
+result: only changed on mobile

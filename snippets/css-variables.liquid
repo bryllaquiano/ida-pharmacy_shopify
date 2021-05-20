@@ -29,8 +29,12 @@
     --color-blankstate-border: {{ settings.color_body_text | color_modify: 'alpha', 0.2 }};
     --color-blankstate-background: {{ settings.color_body_text | color_modify: 'alpha', 0.1 }};
 
+<<<<<<< HEAD
     --color-text-focus: {%- include 'adaptive-color' with settings.color_text as color -%};
     --color-text-focus-header: #cfcfcf;
+=======
+    --color-text-focus: {{ settings.color_text_focus }};
+>>>>>>> 5e471e9e6f4918440a87f405f5a996571b6522d6
     --color-overlay-text-focus: {%- include 'adaptive-color' with settings.color_image_overlay_text as color -%};
     --color-btn-primary-focus: #0B3D65; 
     --color-btn-social-focus: {%- include 'adaptive-color' with settings.color_borders as color -%};
